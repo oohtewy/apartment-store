@@ -1,0 +1,40 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        
+        {% endblock title %}
+    </title>
+    {% comment %} {% bootstrap_messages %} {% endcomment %}
+    {% block link %}
+        <link rel="icon" type="image/x-icon" href="{% static 'icons/image-removebg-preview.png' %}">
+    {% endblock link %}
+    
+    {% bootstrap_css %}
+    {% block style %}
+    <style>
+        
+    </style>
+    {% endblock style %}
+    
+</head>
+<body>
+    {% block content %}
+        
+
+    
+    {% endblock content %}
+    
+    {% bootstrap_javascript %}
+    {% block script %}
+    <script>
+
+        </script>
+    {% endblock script %}
+</body>
+</html>
