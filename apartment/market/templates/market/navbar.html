@@ -1,0 +1,53 @@
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block style %}
+    <style>
+
+        nav{
+            display: flex;
+            width:100%;
+            height:50px;
+            align-items:center;
+            justify-content:space-around;
+            background-color:navy;
+        }
+        .right-side-nav{
+            float:right;
+            width:400px;
+            display:flex;
+            justify-content:space-around;
+        }
+        .right-side-nav a{
+            text-decoration:none;
+            color:beige;
+            font-weight:700;
+            display:flex;
+            align-items:center;
+        }
+        .logo{
+            height:min-content;
+            width:150px;
+        }
+      
+    </style>
+{% endblock style %}
+{% block content %}
+    <nav>
+        <div class="left-side-nav">
+            <span><img class='logo' src="{% static 'icons/logo3.png'%}" ></span>
+        </div>  
+        <div class="right-side-nav">
+            <a href="#" type='button'>Contact</a>
+            <a href="#" type='button'>Market</a>
+            <a href="#" type='button'>My proposals</a>
+            <a href="#" type='button' class='btn btn-warning'>Login</a>
+        </div>
+    </nav>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        
+    </script>
+{% endblock script %}
