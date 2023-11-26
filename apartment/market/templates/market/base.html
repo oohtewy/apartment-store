@@ -10,21 +10,41 @@
         
         {% endblock title %}
     </title>
-    {% comment %} {% bootstrap_messages %} {% endcomment %}
     {% block link %}
-        <link rel="icon" type="image/x-icon" href="{% static 'icons/image-removebg-preview.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'icons/image-removebg-preview.png' %}">
     {% endblock link %}
     
     {% bootstrap_css %}
     {% block style %}
     <style>
-        
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+            transition:0.3s;
+        }
+        .messages{
+            position: absolute;
+            z-index: 999;
+            margin:0 30px;
+            outline: none;
+            width: 70%;
+            left:150px;
+        }
     </style>
     {% endblock style %}
     
 </head>
 <body>
     {% include "market/navbar.html" %}
+    {% if messages %}
+        <span class="messages">
+            {% for message in messages %}
+            {% bootstrap_messages %}
+            {% endfor %}
+        </span>
+    {% endif %}
+    <span style='z-index:999;'></span>
     {% block content %}
         
         
@@ -33,8 +53,13 @@
     
     {% bootstrap_javascript %}
     {% block script %}
-    <script>
-
+        <script>
+            setTimeout(function() {
+                // Найти все элементы с классом "messages" и скрыть их
+                document.querySelectorAll('.messages').forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            }, 2000);
         </script>
     {% endblock script %}
 </body>
