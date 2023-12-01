@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="{% static 'icons/image-removebg-preview.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Noto+Serif+Display&family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    
     <title>Sign In</title>
 </head>
 <body>
@@ -18,22 +22,47 @@
         </span>
     {% endif %}
 
-    
-    <h1>Sign In</h1>
+     <h1>Sign In</h1>
 
-    <form action="/signin" method="post">
+    <form action="/signin" method="post" class="wrapper">
         {% csrf_token %}
-        <label for="username">Username</label>
-        <input type="text" name='username' id="username" placeholder="Enter your username" required>
-        <br>    
-        <label for="password">Password</label>
-        <input type="password" name='password' id="password" placeholder="Enter your password" required>
-        <br>
-        
-        <button type="submit">Sign In</button>
+        <div class="login_box">
+            <div class="login-header">
+                <span>Sign In</span>
+            </div>
+    
+            <div class="input_box">
+                <input type="text" id="user" class="input-field" required>
+                <label for="user" class="label">Username</label>
+                <i class="bx bx-user icon"></i>
+            </div>
+    
+            <div class="input_box">
+                <input type="password" class="input-field" id="pass" required>
+                <label for="pass" class="label">Password</label>
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+    
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox"  id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+    
+                <div class="forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+    
+            <div class="input_box">
+                <input type="submit" class="input-submit" valuel='Sign In'>
+            </div>
+    
+            <div class="register">
+                <span>Don't have account? <a href="#">Register</a></span>
+            </div>
+        </div>
     </form>
-
-
 
     <script>
         setTimeout(function() {
