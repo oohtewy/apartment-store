@@ -1,11 +1,61 @@
 {% extends "market/base.html" %}
 {% load django_bootstrap5 %}
+{% load static %}
+
 
 {% block title %}
     House Aces
 {% endblock title %}
 
 
+{% block style %}
+    <style>
+
+        .section-1{
+            display:flex;
+            width: 89%;
+            height:70vh;
+            margin:0% 5% ;
+            padding: 3% ;
+            border:none;
+            outline:none;
+            border-radius:30px;
+        }
+        .s-1-r{
+            width:100%;
+            display:flex;
+            color: darkorange;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+        .s-1-r h1{
+            color:#ffffff
+            font-width:900;
+            font-size:150px;
+            letter-spacing: 15px;
+        }
+
+        
+
+    </style>
+{% endblock style %}
+
+
 {% block content %}
-    <h1>Marketpace</h1>
+
+    <div class="main">
+        <div class="section-1">
+            <div class="s-1-r">
+                <h1>House Aces</h1>
+                <p>We give the best, you choose even better!</p>
+                <div class="s-1-r-b">
+                    <button type="submit">Learn more</button>
+                    <button type="submit"><a href="{% url 'signin' %}">Sign Up</a></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
 {% endblock content %}
