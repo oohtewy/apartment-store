@@ -30,14 +30,36 @@
             align-items:center;
         }
         .s-1-r h1{
-            color:#ffffff
+            color:#fff; 
             font-width:900;
             font-size:150px;
             letter-spacing: 15px;
         }
+        .s-1-r p{
+            font-size:30px;
+            color:#eee;
+            font-width:100;
+        }
 
-        
-
+        .bn32 {
+            border: solid darkorange;
+            padding: 0.6em 2.3em;
+            cursor: pointer;
+            font-size: 1em;
+            color: #000080;
+            font-weight:800;
+            background-color: transparent;
+            background-image: linear-gradient(45deg, transparent 50%, darkorange 50%);
+            background-position: 25%;
+            background-size: 400%;
+            -webkit-transition: background 500ms ease-in-out, color 500ms ease-in-out;
+            transition: background 500ms ease-in-out, color 500ms ease-in-out;
+          }
+          
+          .bn32:hover {
+            color: #ffffff;
+            background-position: 100%;
+          }
     </style>
 {% endblock style %}
 
@@ -50,8 +72,8 @@
                 <h1>House Aces</h1>
                 <p>We give the best, you choose even better!</p>
                 <div class="s-1-r-b">
-                    <button type="submit">Learn more</button>
-                    <button type="submit"><a href="{% url 'signin' %}">Sign Up</a></button>
+                    <a href="{% url 'signin' %}"><button class="bn-32 bn32" type="submit">Sign In</button></a>
+
                 </div>
             </div>
             

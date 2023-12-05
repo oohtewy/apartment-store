@@ -190,31 +190,21 @@
 {% endblock style %}
 {% block content %}
 
-{% comment %} <nav>
-        <div class="left-side-nav">
-            <span><img class='logo' src="" ></span>
-        </div>  
-        <div class="right-side-nav">
-            <a href="#" type='button'>Contact</a>
-            <a href="#" type='button'>Market</a>
-            <a href="#" type='button'>My proposals</a>
 
-             
-            
-                
-
-        </div>
-    </nav> {% endcomment %}
 
     <header>
         <nav class="navbar">
-          <span class="hamburger-btn material-symbols-rounded">menu</span>
+
+          <button class="hamburger-btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=" material-symbols-rounded navbar-toggler-icon border border-white rounded-1" ></span>
+          </button>
+
           <a href="{% url 'home' %}" class="logo">
             <img src="{% static 'icons/image-removebg-preview.png'%}" alt="logo">
             <h2>HouseAces</h2>
           </a>
           <ul class="links">
-            <span class="close-btn material-symbols-rounded">close</span>
+            <span class="close-btn material-symbols-rounded" style='font-size:30px;color:red;'>&times</span>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Courses</a></li>
             <li><a href="#">About us</a></li>
