@@ -118,7 +118,15 @@
             border: 2px solid #fff;
             transform: translate(-50%, -70%);
         }
+        .navbar .links .creating a {
+          color: white;
+          transition: 0.2s ease;
+        }
         
+        .navbar .links .creating:hover a {
+          color: darkorange;
+            border-bottom:1px solid darkorange;
+        }
         
         @media (max-width: 950px) {
             .navbar :is(.hamburger-btn, .close-btn) {
@@ -205,10 +213,10 @@
           </a>
           <ul class="links">
             <span class="close-btn material-symbols-rounded" style='font-size:30px;color:red;'>&times</span>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Courses</a></li>
+            <li><a href="#">Market</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact us</a></li>
+            <li  class='creating'><a href="#">Create new deal</a></li>
           </ul>
         {% if user.is_authenticated %}
             <button class="login-btn btn btn-danger" type='submit' ><a class='login-text' href="{% url 'signout' %}" >LOG OUT</a></button>
