@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'market',
-    'django_bootstrap5'
+    'django_bootstrap5',
+    'houses'
 ]
 
 MIDDLEWARE = [

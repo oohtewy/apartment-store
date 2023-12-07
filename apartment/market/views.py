@@ -9,7 +9,6 @@ def home(request):
     return render(request,'market/home.html')
 
 
-
 def signup(request):
     
     if request.method == 'POST':
