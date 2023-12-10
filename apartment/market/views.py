@@ -41,7 +41,7 @@ def signup(request):
         
         if not username.isalnum():
             messages.error(request, 'Username must be Alpha-numeric')
-            return redirect('signup')
+            return redirect('signup/')
             
 
         myuser = User.objects.create_user(username,email,password)
@@ -71,7 +71,7 @@ def signin(request):
             return render(request, 'market/home.html', {'fname': fname})
         else:
             messages.error(request, 'Bad cridentials')
-            return redirect('signin')
+            return redirect('signin/')
     
     return render(request, 'auth/signin.html')
 

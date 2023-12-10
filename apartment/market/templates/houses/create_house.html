@@ -8,5 +8,18 @@
 
 {% block content %}
     <h1>Create new proposal</h1>
+    
+    <form mathod='POST' action='/houses/' enctype="multipart/form-data">
+
+        {{form.title}}
+        {{form.image}}
+        {{form.description}}
+        {{form.address}}
+        {{form.num_of_rooms}}
+        {{form.price}}
+        {{form.space}}
+        <span>{{error}}</span>
+        <button type="submit" class="btn btn-success">Create proposal</button>
+    </form>
 {% endblock content %}
 
