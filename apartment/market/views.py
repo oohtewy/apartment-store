@@ -79,3 +79,10 @@ def signout(request):
     logout(request)
     messages.success(request, 'You logged out successfuly')
     return redirect('home')
+
+def about(request):
+    return render(request,'market/about.html')
+    
+def contact(request):
+    return render(request,'market/contact.html')
+    

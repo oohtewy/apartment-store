@@ -214,9 +214,9 @@
           <ul class="links">
             <span class="close-btn material-symbols-rounded" style='font-size:30px;color:red;'>&times</span>
             <li><a href="{% url 'houses_home' %}">Market</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li  class='creating'><a href="#">Create new deal</a></li>
+            <li><a href="{% url 'about' %}">About us</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+            <li  class='creating'><a href="{% url 'create_house' %}">Create new deal</a></li>
           </ul>
         {% if user.is_authenticated %}
             <button class="login-btn btn btn-danger" type='submit' ><a class='login-text' href="{% url 'signout' %}" >LOG OUT</a></button>
