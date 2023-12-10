@@ -11,6 +11,7 @@ class HousesModel(models.Model):
     num_of_rooms = models.DecimalField('Number of rooms',max_digits=4, decimal_places=2 )
     price= models.DecimalField('Price', max_digits=100, decimal_places=2)
     space=models.DecimalField('Space',max_digits=10, decimal_places=2)
+    date= models.DateField('Date',auto_now=True)
     
     def __str__(self) -> str:
         return self.title
