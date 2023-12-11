@@ -9,8 +9,9 @@
 {% block content %}
     <h1>Update proposal</h1>
     
-    <form mathod='POST'   enctype="multipart/form-data">
+    <form method='POST' enctype="multipart/form-data">
 
+        {% csrf_token %}
 
         {{form.title}}
         {{form.image}}

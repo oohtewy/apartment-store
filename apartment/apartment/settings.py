@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'market',
     'django_bootstrap5',
+    'market',
     'houses'
 ]
 

@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -21,27 +21,27 @@ def signup(request):
 
         if User.objects.filter(username=username):
             messages.error(request,'Username already exist!')
-            return redirect('signup')
+            return redirect('/signup/')
         
         if User.objects.filter(email= email):
             messages.error(request,'Email already exist!')
-            return redirect('signup')
+            return redirect('/signup/')
         
         if len(username)<2:
             messages.error(request, 'Your username must be longer than 2 characters')
-            return redirect('signup')
+            return redirect('/signup/')
             
         if  len(username)>50:
             messages.error(request, 'Your username must be shorter than 50 characters')
-            return redirect('signup')
+            return redirect('/signup/')
         
         if password != confpass:
             messages.error(request, 'Passwords did not match')
-            return redirect('signup')
+            return redirect('/signup/')
         
         if not username.isalnum():
             messages.error(request, 'Username must be Alpha-numeric')
-            return redirect('signup/')
+            return redirect('/signup/')
             
 
         myuser = User.objects.create_user(username,email,password)
@@ -71,18 +71,24 @@ def signin(request):
             return render(request, 'market/home.html', {'fname': fname})
         else:
             messages.error(request, 'Bad cridentials')
-            return redirect('signin/')
+            return redirect('/signin/')
     
     return render(request, 'auth/signin.html')
 
+@login_required
 def signout(request):
     logout(request)
     messages.success(request, 'You logged out successfuly')
     return redirect('home')
 
+@login_required
 def about(request):
     return render(request,'market/about.html')
-    
+
+@login_required
 def contact(request):
     return render(request,'market/contact.html')
-    
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
