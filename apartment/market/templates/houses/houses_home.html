@@ -12,6 +12,7 @@
             display:grid;
             grid-template-columns:1fr 1fr 1fr;
             padding:20px 50px;
+            gap:30px
         }
           .card {
             width: 36rem;
@@ -93,7 +94,7 @@
               <p>
                 {{house.description}}
               </p>
-              <a href="#" class="button">
+              <a href="{% url 'details' house.id  %}" class="button">
                 Find out more 
                 <span class="material-symbols-outlined">
                     ➜

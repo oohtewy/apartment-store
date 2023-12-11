@@ -1,0 +1,22 @@
+{% extends "market/base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block title %}
+    Details of {{ house.title }}
+{% endblock title %}
+
+{% block content %}
+    <img src='{{ house.image.url}}' height='100' width='100' >
+    <h1>{{house.title}}</h1>
+    <p>{{house.description}}</p>
+    <p>{{house.address}}</p>
+    <p>{{house.num_of_rooms}}</p>
+    <p>{{house.price}}</p>
+    <p>{{house.space}}</p>
+    <p>{{house.date}}</p>
+
+    <button><a href="{% url 'update' house.id %}">Update</a></button>
+    <button><a href="{% url 'delete' house.id %}">Delete</a></button>
+{% endblock content %}
+

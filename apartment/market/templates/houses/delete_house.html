@@ -1,0 +1,19 @@
+{% extends "market/base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block title %}
+    Delete proposal
+{% endblock title %}
+
+{% block content %}
+    <h1>Delete proposal</h1>
+    
+    <form mathod='POST'   enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <button type="submit" class="btn btn-success">Delete proposal</button>
+    </form>
+{% endblock content %}
+
