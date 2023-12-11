@@ -1,0 +1,31 @@
+{% extends "market/base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+
+{% block title %}
+    404 - Page Not Found
+{% endblock title %}
+{% block style %}
+    <style>
+
+        body{
+            background-color:#000080;
+            color: darkorange;
+            text-align:center;
+            padding:300px 0;
+        }
+        h1{
+            font-size:400px;
+        }
+
+    </style>
+{% endblock style %}
+
+
+{% block content %}
+    <h1>404</h1>
+    <h3>I think you entered wrong page</h3>
+{% endblock content %}
+
+

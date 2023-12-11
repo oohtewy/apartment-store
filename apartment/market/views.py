@@ -9,6 +9,9 @@ def home(request):
     return render(request,'market/home.html')
 
 
+def nf(request):
+    return render(request,'404.html')
+
 def signup(request):
     
     if request.method == 'POST':
